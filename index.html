@@ -34,16 +34,22 @@
 				<form class="container" name="songForm">
 					<div class="form-group searchfield">
 						<label>Spotify search:</label>
-						<input name="search" placeholder="Enter your search.." ng-model="track" class="form-control"></input>
+						<input name="search" placeholder="NOUN" ng-model="track" class="form-control"></input>
 					</div>
 					<div class="form-group">
-						<input name="search" placeholder="Enter your search.." ng-model="track" class="form-control"></input>
+						<input name="search" placeholder="NOUN (PLURAL)" ng-model="track" class="form-control"></input>
 					</div>
 					<div class="form-group">
-						<input name="search" placeholder="Enter your search.." ng-model="track" class="form-control"></input>
+						<input name="search" placeholder="NOUN" ng-model="track" class="form-control"></input>
 					</div>
 					<div class="form-group">
-						<input name="search" placeholder="Enter your search.." ng-model="track" class="form-control"></input>
+						<input name="search" placeholder="PLACE" ng-model="track" class="form-control"></input>
+					</div>
+					<div class="form-group">
+						<input name="search" placeholder="ADJECTIVE" ng-model="track" class="form-control"></input>
+					</div>
+					<div class="form-group">
+						<input name="search" placeholder="NOUN" ng-model="track" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs()" type="submit">Submit</button>

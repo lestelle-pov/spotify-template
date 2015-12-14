@@ -30,14 +30,32 @@
 		</nav>		
 		<!-- Form -->
 		<div class="row">
-			<div class="col-sm-3">
-				<form class="container" name="songForm">
-					<div class="form-group searchfield">
+			<div class="col-md-4">
+				<form class="container words" name="songForm">
+					<div class="form-group">
 						<label>Spotify search:</label>
+						<input name="search" placeholder="VERB ENDING IN &quot;ING&quot;" ng-model="track" class="form-control"></input>
+					</div>
+					<div class="form-group">
+						<input name="search" placeholder="VERB ENDING IN &quot;ED&quot;" ng-model="track" class="form-control"></input>
+					</div>
+					<div class="form-group">
+						<input name="search" placeholder="VERB ENDING IN &quot;ED&quot;" ng-model="track" class="form-control"></input>
+					</div>
+					<div class="form-group">
 						<input name="search" placeholder="NOUN" ng-model="track" class="form-control"></input>
 					</div>
 					<div class="form-group">
-						<input name="search" placeholder="NOUN (PLURAL)" ng-model="track" class="form-control"></input>
+						<input name="search" placeholder="VERB" ng-model="track" class="form-control"></input>
+					</div>
+					<div class="form-group">
+						<input name="search" placeholder="ANIMAL" ng-model="track" class="form-control"></input>
+					</div>
+					<div class="form-group">
+						<input name="search" placeholder="NOUN" ng-model="track" class="form-control"></input>
+					</div>
+					<div class="form-group">
+						<input name="search" placeholder="NOUN" ng-model="track" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<input name="search" placeholder="NOUN" ng-model="track" class="form-control"></input>
@@ -46,27 +64,34 @@
 						<input name="search" placeholder="PLACE" ng-model="track" class="form-control"></input>
 					</div>
 					<div class="form-group">
-						<input name="search" placeholder="ADJECTIVE" ng-model="track" class="form-control"></input>
-					</div>
-					<div class="form-group">
-						<input name="search" placeholder="NOUN" ng-model="track" class="form-control"></input>
+						<input name="search" placeholder="NUMBER" ng-model="track" class="form-control"></input>
 					</div>
 					<div class="form-group">
 						<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs()" type="submit">Submit</button>
 					</div>
 				</form>
 			</div>
+			<div class="col-md-4">
+				<div class="container madlib">
+					<p>
+						I was [Word Not Submitted] along the sidewalk when an alien [Word Not Submitted] me. I was [Word Not Submitted] into their [Word Not Submitted] and it blasted off. Then the alien asked me to [Word Not Submitted] on the TV. I was suprised they spoke english. the aliens had a pet [Word Not Submitted]. We ordered a [Word Not Submitted] and it tasted good. As we came back into the galaxy, one alien asked me if I wanted a [Word Not Submitted]. I said no but I would like a [Word Not Submitted]. He got it for me and then dropped me off at my [Word Not Submitted]. then I realized I had been gone for [Word Not Submitted] years!
+					</p>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="container-fixed madlibSongs">
+					<div class="help-block">
+						<span ng-show="tracks.length>0">Click to sample</span>
+						<span ng-show="currentSong && !audioObject.paused">(playing)</span>
+					</div>
+					<ul>
+						<li ng-repeat="track in tracks" class="" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
+					</ul>			
+				</div>
+			</div>
 		</div>
 		<!-- Results -->
-		<div class="container-fixed">
-			<div class="help-block">
-				<span ng-show="tracks.length>0">Click to sample</span>
-				<span ng-show="currentSong && !audioObject.paused">(playing)</span>
-			</div>
-			<ul>
-				<li ng-repeat="track in tracks" class="" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
-			</ul>			
-		</div>
+		
 	</div>
 </body>
 </html>

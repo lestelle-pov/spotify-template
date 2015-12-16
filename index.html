@@ -31,63 +31,136 @@
 		<!-- Form -->
 		<div class="row">
 			<div class="col-md-4">
+				<h2>MAD LIB WORDS</h2>
 				<form class="container words" name="songForm">
-					<div class="form-group">
-						<label>Spotify search:</label>
-						<input name="search" placeholder="VERB ENDING IN &quot;ING&quot;" ng-model="track" class="form-control"></input>
+					<div class="form-group input-group">
+						<input name="search" placeholder="VERB ENDING IN &quot;ED&quot;" ng-model="track1" class="form-control"></input>
+						<span class="input-group-btn">
+							<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSong1(); sentence1=true" type="submit" id="button1">ADD</button>
+						</span>
 					</div>
-					<div class="form-group">
-						<input name="search" placeholder="VERB ENDING IN &quot;ED&quot;" ng-model="track" class="form-control"></input>
+					<div class="form-group input-group" ng-show="sentence1">
+						<input name="search" placeholder="NOUN" ng-model="track2" class="form-control"></input>
+						<span class="input-group-btn">
+							<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSong2(); sentence2=true" type="submit" id="button1">ADD</button>
+						</span>
 					</div>
-					<div class="form-group">
-						<input name="search" placeholder="VERB ENDING IN &quot;ED&quot;" ng-model="track" class="form-control"></input>
+					<div class="form-group input-group" ng-show="sentence2">
+						<input name="search" placeholder="VERB" ng-model="track3" class="form-control"></input>
+						<span class="input-group-btn">
+							<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSong3(); sentence3=true" type="submit" id="button1">ADD</button>
+						</span>
 					</div>
-					<div class="form-group">
-						<input name="search" placeholder="NOUN" ng-model="track" class="form-control"></input>
+					<div class="form-group input-group" ng-show="sentence3">
+						<input name="search" placeholder="ANIMAL" ng-model="track4" class="form-control"></input>
+						<span class="input-group-btn">
+							<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSong4(); sentence4=true" type="submit" id="button1">ADD</button>
+						</span>
 					</div>
-					<div class="form-group">
-						<input name="search" placeholder="VERB" ng-model="track" class="form-control"></input>
+					<div class="form-group input-group" ng-show="sentence4">
+						<input name="search" placeholder="NOUN" ng-model="track5" class="form-control"></input>
+						<span class="input-group-btn">
+							<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSong5(); sentence5=true" type="submit" id="button1">ADD</button>
+						</span>
 					</div>
-					<div class="form-group">
-						<input name="search" placeholder="ANIMAL" ng-model="track" class="form-control"></input>
+					<div class="form-group input-group" ng-show="sentence5">
+						<input name="search" placeholder="NOUN" ng-model="track6" class="form-control"></input>
+						<span class="input-group-btn">
+							<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSong6(); sentence6=true" type="submit" id="button1">ADD</button>
+						</span>
 					</div>
-					<div class="form-group">
-						<input name="search" placeholder="NOUN" ng-model="track" class="form-control"></input>
+					<div class="form-group input-group" ng-show="sentence6">
+						<input name="search" placeholder="NOUN" ng-model="track7" class="form-control"></input>
+						<span class="input-group-btn">
+							<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSong7(); sentence7=true" type="submit" id="button1">ADD</button>
+						</span>
 					</div>
-					<div class="form-group">
-						<input name="search" placeholder="NOUN" ng-model="track" class="form-control"></input>
+					<div class="form-group input-group" ng-show="sentence7">
+						<input name="search" placeholder="PLACE" ng-model="track8" class="form-control"></input>
+						<span class="input-group-btn">
+							<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSong8(); sentence8=true" type="submit" id="button1">ADD</button>
+						</span>
 					</div>
-					<div class="form-group">
-						<input name="search" placeholder="NOUN" ng-model="track" class="form-control"></input>
-					</div>
-					<div class="form-group">
-						<input name="search" placeholder="PLACE" ng-model="track" class="form-control"></input>
-					</div>
-					<div class="form-group">
-						<input name="search" placeholder="NUMBER" ng-model="track" class="form-control"></input>
-					</div>
-					<div class="form-group">
-						<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSongs()" type="submit">Submit</button>
+					<div class="form-group input-group" ng-show="sentence8">
+						<input name="search" placeholder="NUMBER (NO MORE THAN 2 DIGITS)" ng-model="track9" class="form-control"></input>
+						<span class="input-group-btn">
+							<button ng-disabled="songForm.search.$invalid" class="btn btn-primary" ng-click="getSong9(); sentence9=true" type="submit" id="button1">ADD</button>
+						</span>
 					</div>
 				</form>
 			</div>
 			<div class="col-md-4">
-				<div class="container madlib">
-					<p>
-						I was [Word Not Submitted] along the sidewalk when an alien [Word Not Submitted] me. I was [Word Not Submitted] into their [Word Not Submitted] and it blasted off. Then the alien asked me to [Word Not Submitted] on the TV. I was suprised they spoke english. the aliens had a pet [Word Not Submitted]. We ordered a [Word Not Submitted] and it tasted good. As we came back into the galaxy, one alien asked me if I wanted a [Word Not Submitted]. I said no but I would like a [Word Not Submitted]. He got it for me and then dropped me off at my [Word Not Submitted]. then I realized I had been gone for [Word Not Submitted] years!
+				<h2>YOUR STORY</h2>
+				<div class="container madlibText">
+					<p ng-show="sentence1" id="sentence1">
+						I was walking along the sidewalk when an alien <span class="word" ng-model="track1">{{track1}}</span> me. 
+					</p>
+					<p ng-show="sentence2" class="word2">
+						I was taken to their <span class="word" ng-model="track2">{{track2}}</span>  and it blasted off.
+					</p>
+					<p ng-show="sentence3" class="word3">
+						Then the alien asked me to <span class="word" ng-model="track3">{{track3}}</span>  on the TV. I was suprised they spoke english. 
+					</p>
+					<p ng-show="sentence4" class="word4">
+						The aliens had a pet <span class="word" ng-model="track4">{{track4}}</span> . 
+					</p>
+					<p ng-show="sentence5" class="word5">
+						We ordered a <span class="word" ng-model="track5">{{track5}}</span>  and it tasted good. 
+					</p>
+					<p ng-show="sentence6" class="word6">
+						As we came back into the galaxy, one alien asked me if I wanted a <span class="word" ng-model="track6">{{track6}}</span> . 
+					</p>
+					<p ng-show="sentence7" class="word7">
+						I said no but I would like a <span class="word" ng-model="track7">{{track7}}</span> . 
+					</p>
+					<p ng-show="sentence8" class="word8">
+						He got it for me and then dropped me off at my <span class="word" ng-model="track8">{{track8}}</span> . 
+					</p>
+					<p ng-show="sentence9" class="word9">
+						Then I realized I had been gone for <span class="word" ng-model="track9">{{track9}}</span>  years!
 					</p>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="container-fixed madlibSongs">
+					<h2>YOUR STORY'S PLAYLIST<span id="playing" ng-show="currentSong && !audioObject.paused"> (playing)</span></h2>
+					<ol>
+						<li ng-repeat="track in tracks1 | limitTo: 1" class="glyphicon glyphicon-play" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
+					</ol>
+					<ol>
+						<li ng-repeat="track in tracks2 | limitTo: 1" class="glyphicon glyphicon-play" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
+					</ol>	
+					<ol>
+						<li ng-repeat="track in tracks3 | limitTo: 1" class="glyphicon glyphicon-play" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
+					</ol>			
+					<ol>
+						<li ng-repeat="track in tracks4 | limitTo: 1" class="glyphicon glyphicon-play" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
+					</ol>		
+					<ol>
+						<li ng-repeat="track in tracks5 | limitTo: 1" class="glyphicon glyphicon-play" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
+					</ol>	
+					<ol>
+						<li ng-repeat="track in tracks6 | limitTo: 1" class="glyphicon glyphicon-play" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
+					</ol>	
+					<ol>
+						<li ng-repeat="track in tracks7 | limitTo: 1" class="glyphicon glyphicon-play" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
+					</ol>	
+					<ol>
+						<li ng-repeat="track in tracks8 | limitTo: 1" class="glyphicon glyphicon-play" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
+					</ol>	
+					<ol>
+						<li ng-repeat="track in tracks9 | limitTo: 1" class="glyphicon glyphicon-play" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
+					</ol>	
+				</div>
+				<!-- <div class="container-fixed madlibSongs">
 					<div class="help-block">
-						<span ng-show="tracks.length>0">Click to sample</span>
+						<span ng-show="tracks2.length>0">Click to sample</span>
 						<span ng-show="currentSong && !audioObject.paused">(playing)</span>
 					</div>
 					<ul>
-						<li ng-repeat="track in tracks" class="" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
+						<li ng-repeat="track in tracks2 | limitTo: 1" class="" ng-click="play(track.preview_url)" title="{{track.name}}">{{track.name + ', by ' + track.artists[0].name}}</li>
 					</ul>			
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<!-- Results -->

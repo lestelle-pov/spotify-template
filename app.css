@@ -10,3 +10,40 @@ body {
 	margin-left: 1em;
 	margin-right: 1em;
 }
+
+.madlibText {
+	font-size: 20px;
+}
+
+
+.word {
+	color: #ff2d79;
+}
+
+.madlibText {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.madlibSongs {
+	font-size: 20px;
+}
+
+h2 {
+	text-align: center;
+	font-size: 18px;
+	padding-bottom: .5em;
+}
+
+#playing {
+	color: #ff2d79;
+}
+
+.madlibSongs {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.madlibSongs ol {
+	font-size: 16px;
+}
